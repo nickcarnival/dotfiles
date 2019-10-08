@@ -56,7 +56,7 @@ case $option in
 
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
-    ln -sfnv "$PWD/.vim/vimrc" ~/.vim/vimrc
+    ln -sfnv "$PWD/.vim/" ~/.vim/
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
     ln -sfnv "$PWD/.bashrc" ~/.bashrc
     ln -sfnv "$PWD/.xinitrc" ~/.xinitrc
