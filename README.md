@@ -6,7 +6,8 @@ This is largely based off of [Abhishek Keshri's Dotfile Manager](https://github.
 
 ``` bash
 git clone git@github.com/ncarn2/dotfiles.git ~/
-bash ./dotfiles/setup.sh
+cd ./dotfiles
+bash ./setup.sh
 ```
 
 This should prompt you to install oh-my-zsh, zsh, or vim plugins. After you have the desired plugins installed, you can run option 4 which will setup your symlinks.
