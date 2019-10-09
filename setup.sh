@@ -26,7 +26,17 @@ case $option in
     ;;
 
 "3")echo -e "\u001b[7m Installing vim plugins... \u001b[0m"
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    if [ -d "~/.vim/bundle/" ]; then
+        echo 'Vundle is not installed, installing it'
+        git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    fi
+
+    if [ -d "~/.vim/.vim" ]; then
+        rm -rf ~/.vim/.vim
+    fi
+
+    echo 'Copying Local Vim config to home directory'
+    cp -r "$PWD/.vim" ~/.vim 
     vim +PlugInstall +qall
     ;;
 
@@ -41,7 +51,7 @@ case $option in
 
     mv -iv ~/.gitconfig ~/.gitconfig.old
     mv -iv ~/.tmux.conf ~/.tmux.conf.old
-    mv -iv ~/.vim ~/.vim.old
+    mv -iv ~/.vim/ ~/.vim.old
     mv -iv ~/.zshrc ~/.zshrc.old
     mv -iv ~/.bashrc ~/.bashrc.old
     mv -iv ~/.xinitrc ~/.xinitrc.old
