@@ -115,8 +115,6 @@ alias r="ranger"
 alias vim="nvim"
 alias v="nvim"
 alias p="python"
-alias zshrc="vim ~/.zshrc && zsh"
-alias i3config="vim ~/.config/i3/config"
 alias tp="ping -c 3 1.1.1.1"
 alias ls="lsd"
 alias xinitrc="vim ~/.xinitrc"
@@ -136,10 +134,12 @@ function vimrc () {
 }
 
 # Application Config Aliases
-alias vimrc="vim ~/.vim/vimrc"
-alias polybarrc="vim ~/.config/polybar/config"
-alias alacrittyrc="vim ~/.config/alacritty/alacritty.yml"
-alias tmuxrc="vim ~/.tmux.conf"
+alias i3config="vim ~/dotfiles/.config/i3/config"
+alias zshrc="vim ~/dotfiles/.zshrc && zsh"
+alias vimrc="vim ~/dotfiles/.vim/vimrc"
+alias polybarrc="vim ~/dotfiles/.config/polybar/config"
+alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
+alias tmuxrc="vim ~/dotfiles/.tmux.conf"
 alias sl='ls'
 
 function cs () {

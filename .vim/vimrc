@@ -1,6 +1,6 @@
 "
-"we have to run the PluginInstall and qall now :(
-"vim +PluginInstall +qall
+"we have to run the PlugInstall and qall now :(
+"vim +PlugInstall +qall
 
 set encoding=utf-8
 set nocompatible
@@ -59,6 +59,8 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 syntax on
 set t_co=256
 
+" escape key timeout or something
+set timeoutlen=1000 ttimeoutlen=0
 
 "----------------------COLOR SCHEMES-------------------------
 silent! colorscheme cobalt
