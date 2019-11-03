@@ -142,6 +142,34 @@ alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxrc="vim ~/dotfiles/.tmux.conf"
 alias sl='ls'
 
+# Mounts filesystem
+function usb () {
+    echo 'Choose a device'
+    lsblk
+    read dir
+    echo 'Deleting USB dir'
+    rm -rf  USB
+    mkdir USB 
+    echo "Mounting $dir to USB"
+    sudo mount $dir USB
+}
+
+# Unmounts and ejects filesystem
+# Does not safely work yet...
+# function ejectusb () {
+#     echo 'Choose a device'
+#     lsblk
+#     read dir
+#     echo "Unmounting $dir"
+#     sudo umount $dir
+#     sudo eject $dir
+#     if [[ -f USB ]]; then
+#         echo "Deleting USB"
+#         rm -rf USB
+#     fi
+#     echo "USB does not exist in the current directory"
+# }
+
 function cs () {
     cd $1
     ls
