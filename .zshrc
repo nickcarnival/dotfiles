@@ -175,6 +175,11 @@ function cs () {
     ls
 }
 
+function install() {
+    echo "[*] Installing $1"
+    sudo pacman -Syu $1
+}
+
 function gitssh () {
     eval `ssh-agent`
     ssh-add ~/.ssh/captain
