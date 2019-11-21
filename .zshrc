@@ -116,7 +116,7 @@ alias vim="nvim"
 alias v="nvim"
 alias p="python"
 alias ls="lsd"
-alias xinitrc="vim ~/.xinitrc"
+alias xinitrc="nvim ~/.xinitrc"
 alias vm="virtualbox"
 alias m="man"
 
@@ -128,8 +128,8 @@ alias illuminate="ssh ncarnival@illuminate.mines.edu "
 alias imagine="ssh ncarnival@imagine.mines.edu "
 
 function vimrc () {
-    v ~/.vim/vimrc
-    v +PlugInstall +qall
+    nvim ~/.vim/vimrc
+    nvim +PlugInstall +qall
 }
 
 # Application Config Aliases
