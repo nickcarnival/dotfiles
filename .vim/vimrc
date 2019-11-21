@@ -18,6 +18,10 @@ Plug 'derekwyatt/vim-scala'
 "Plug 'racer-rust/vim-racer'
 Plug 'rust-lang/rust.vim'
 Plug 'itchyny/lightline.vim'
+
+" Markdown live stuff
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()            
 
 " Put your non-Plugin stuff after this line
