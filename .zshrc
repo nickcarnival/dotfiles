@@ -115,7 +115,6 @@ alias r="ranger"
 alias vim="nvim"
 alias v="nvim"
 alias p="python"
-alias tp="ping -c 3 1.1.1.1"
 alias ls="lsd"
 alias xinitrc="vim ~/.xinitrc"
 alias vm="virtualbox"
@@ -170,6 +169,11 @@ function usb () {
 #     echo "USB does not exist in the current directory"
 # }
 
+alias tp="ping -c 3 1.1.1.1"
+
+function wifi () {
+    sudo wifi-menu
+}
 function cs () {
     cd $1
     ls
