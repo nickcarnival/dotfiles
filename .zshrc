@@ -120,6 +120,33 @@ alias xinitrc="nvim ~/.xinitrc"
 alias vm="virtualbox"
 alias m="man"
 alias temp="watch sensors -f"
+alias tp="ping -c 3 1.1.1.1"
+alias sl='ls'
+
+function wifi () {
+    sudo wifi-menu
+}
+function cs () {
+    cd $1
+    ls
+}
+function update () {
+    echo '[*] Updating Arch'
+    sudo pacman -Syu -y
+    echo '[*] Updating ZSH'
+    upgrade_oh_my_zsh
+}
+
+function install() {
+    echo "[*] Installing $1"
+    sudo pacman -Syu $1
+}
+
+function gitssh () {
+    eval `ssh-agent`
+    ssh-add ~/.ssh/captain
+}
+
 
 # SSH Aliases
 alias isengard="ssh ncarnival@isengard.mines.edu "
@@ -127,11 +154,8 @@ alias isengard="ssh ncarnival@isengard.mines.edu "
 alias illuminate="ssh ncarnival@illuminate.mines.edu "
 
 alias imagine="ssh ncarnival@imagine.mines.edu "
+alias minesvpn="sudo openvpn --config client.ovpn"
 
-function vimrc () {
-    nvim ~/.vim/vimrc
-    nvim +PlugInstall +qall
-}
 
 # Application Config Aliases
 alias i3config="vim ~/dotfiles/.config/i3/config"
@@ -140,8 +164,11 @@ alias vimrc="vim ~/dotfiles/.vim/vimrc"
 alias polybarrc="vim ~/dotfiles/.config/polybar/config"
 alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxrc="vim ~/dotfiles/.tmux.conf"
-alias isenvpn="openvpn --config client.ovpn"
-alias sl='ls'
+
+function vimrc () {
+    nvim ~/.vim/vimrc
+    nvim +PlugInstall +qall
+}
 
 # Mounts filesystem
 function usb () {
@@ -171,30 +198,4 @@ function usb () {
 #     echo "USB does not exist in the current directory"
 # }
 
-alias tp="ping -c 3 1.1.1.1"
-
-function wifi () {
-    sudo wifi-menu
-}
-function cs () {
-    cd $1
-    ls
-}
-
-function install() {
-    echo "[*] Installing $1"
-    sudo pacman -Syu $1
-}
-
-function gitssh () {
-    eval `ssh-agent`
-    ssh-add ~/.ssh/captain
-}
-
-function update () {
-    echo '[*] Updating Arch'
-    sudo pacman -Syu -y
-    echo '[*] Updating ZSH'
-    upgrade_oh_my_zsh
-}
 
