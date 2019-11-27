@@ -140,6 +140,7 @@ alias vimrc="vim ~/dotfiles/.vim/vimrc"
 alias polybarrc="vim ~/dotfiles/.config/polybar/config"
 alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxrc="vim ~/dotfiles/.tmux.conf"
+alias isenvpn="openvpn --config client.ovpn"
 alias sl='ls'
 
 # Mounts filesystem
