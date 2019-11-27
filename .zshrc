@@ -119,6 +119,7 @@ alias ls="lsd"
 alias xinitrc="nvim ~/.xinitrc"
 alias vm="virtualbox"
 alias m="man"
+alias temp="watch sensors -f"
 
 # SSH Aliases
 alias isengard="ssh ncarnival@isengard.mines.edu "
