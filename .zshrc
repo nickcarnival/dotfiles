@@ -130,6 +130,11 @@ function cs () {
     cd $1
     ls
 }
+
+function copy() {
+    xclip -sel c $1
+}
+
 function update () {
     echo '[*] Updating Arch'
     sudo pacman -Syu -y
