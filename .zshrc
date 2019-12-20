@@ -120,7 +120,7 @@ alias xinitrc="nvim ~/.xinitrc"
 alias vm="virtualbox"
 alias m="man"
 alias temp="watch sensors -f"
-alias tp="ping -c 3 1.1.1.1"
+alias tp="ping -c 1 1.1.1.1"
 alias sl='ls'
 
 function wifi () {
