@@ -135,6 +135,12 @@ function cs () {
 function copy() {
     xclip -sel c $1
 }
+function clean() {
+    echo '[*] Removing Pacman Cache'
+    sudo paccache --remove --keep 1
+    echo '[*] Removing Unused Pacman Packages'
+    sudo pacman -Qtdq
+}
 
 function update () {
     echo '[*] Updating Arch'
