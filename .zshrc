@@ -141,6 +141,8 @@ function update () {
     sudo pacman -Syu -y
     echo '[*] Updating ZSH'
     upgrade_oh_my_zsh
+    echo '[*] Updating Yay repositories'
+    sudo yay -Syu
 }
 
 function install() {
