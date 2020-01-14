@@ -10,7 +10,8 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-Plug 'Shougo/deoplete.nvim'
+" This is broken
+" Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
 Plug 'derekwyatt/vim-scala'
 "Prettier
@@ -23,7 +24,6 @@ Plug 'itchyny/lightline.vim'
 call plug#end()            
 " Put your non-Plugin stuff after this line
 
-let g:deoplete#enable_at_startup = 1
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '--'

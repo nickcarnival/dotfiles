@@ -121,7 +121,6 @@ alias vm="virtualbox"
 alias m="man"
 alias temp="watch sensors -f"
 alias tp="ping -c 1 1.1.1.1"
-alias longtp="ping -c 10 1.1.1.1"
 alias sl='ls'
 
 function wifi () {
