@@ -37,7 +37,7 @@ case $option in
 
     echo 'Copying Local Vim config to home directory'
     cp -r "$PWD/.vim" ~/.vim 
-    vim +PlugInstall +qall
+    nvim +PlugInstall +qall
     ;;
 
 "4")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
