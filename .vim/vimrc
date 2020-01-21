@@ -10,8 +10,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-" This is broken
-" Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
 Plug 'derekwyatt/vim-scala'
 "Prettier

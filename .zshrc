@@ -134,6 +134,7 @@ function cs () {
 function copy() {
     xclip -sel c $1
 }
+
 function clean() {
     echo '[*] Removing Pacman Cache'
     sudo paccache --remove --keep 1
@@ -171,6 +172,7 @@ alias minesvpn="sudo openvpn --config client.ovpn"
 
 
 # Application Config Aliases
+alias dotfiles="cd ~/dotfiles"
 alias i3config="vim ~/dotfiles/.config/i3/config"
 alias zshrc="vim ~/dotfiles/.zshrc && zsh"
 alias vimrc="vim ~/dotfiles/.vim/vimrc"
@@ -183,6 +185,7 @@ function vimrc () {
     nvim +PlugInstall +qall
 }
 
+# TODO: Make this work
 # Mounts filesystem
 function usb () {
     echo 'Choose a device'
