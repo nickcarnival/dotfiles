@@ -163,10 +163,10 @@ function gitssh () {
 
 # SSH Aliases
 alias isengard="ssh ncarnival@isengard.mines.edu "
-
 alias illuminate="ssh ncarnival@illuminate.mines.edu "
-
 alias imagine="ssh ncarnival@imagine.mines.edu "
+alias lilpi="ssh lilpi@192.168.223.145"
+
 alias minesvpn="sudo openvpn --config client.ovpn"
 
 
