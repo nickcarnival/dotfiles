@@ -114,6 +114,7 @@ export LC_CTYPE=en_US.UTF-8
 alias r="ranger"
 alias vim="nvim"
 alias v="nvim"
+alias svim="sudo vim"
 alias p="python"
 alias ls="lsd"
 alias xinitrc="nvim ~/.xinitrc"
@@ -183,6 +184,11 @@ alias tmuxrc="vim ~/dotfiles/.tmux.conf"
 function vimrc () {
     nvim ~/.vim/vimrc
     nvim +PlugInstall +qall
+}
+
+# Executes python script to cahnge background based off of popular r/wallpaper
+function change_background() {
+
 }
 
 # TODO: Make this work
