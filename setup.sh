@@ -30,14 +30,14 @@ case $option in
         echo 'Vundle is not installed, installing it'
         git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     fi
-
+    # This might be causing errors
     if [ -d "~/.vim/.vim" ]; then
         rm -rf ~/.vim/.vim
     fi
 
     echo 'Copying Local Vim config to home directory'
     cp -r "$PWD/.vim" ~/.vim 
-    vim +PlugInstall +qall
+    nvim +PlugInstall +qall
     ;;
 
 "4")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
@@ -66,7 +66,8 @@ case $option in
 
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
-    ln -sfnv "$PWD/.vim/" ~/.vim/
+    # TODO: link a directory and all of its contentes
+    ln -sfnv "$PWD/.vim" ~/.vim
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
     ln -sfnv "$PWD/.bashrc" ~/.bashrc
     ln -sfnv "$PWD/.xinitrc" ~/.xinitrc

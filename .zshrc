@@ -176,13 +176,13 @@ alias minesvpn="sudo openvpn --config client.ovpn"
 alias dotfiles="cd ~/dotfiles"
 alias i3config="vim ~/dotfiles/.config/i3/config"
 alias zshrc="vim ~/dotfiles/.zshrc && zsh"
-alias vimrc="vim ~/dotfiles/.vim/vimrc"
 alias polybarrc="vim ~/dotfiles/.config/polybar/config"
 alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxrc="vim ~/dotfiles/.tmux.conf"
 
 function vimrc () {
     nvim ~/.vim/vimrc
+    # Set the vim syslinks
     nvim +PlugInstall +qall
 }
 
