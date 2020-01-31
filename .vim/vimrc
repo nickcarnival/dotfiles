@@ -32,7 +32,7 @@ let g:ale_sign_warning = '--'
 
 " Lightline Config
 let g:lightline = {
-    \ 'colorscheme' : 'landscape',
+    \ 'colorscheme' : 'wombat',
     \ }
 
 "format files for windows
