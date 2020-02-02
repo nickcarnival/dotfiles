@@ -10,8 +10,6 @@ filetype off
 call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
-" This is broken
-" Plug 'Shougo/deoplete.nvim'
 Plug 'w0rp/ale'
 Plug 'derekwyatt/vim-scala'
 "Prettier
@@ -24,10 +22,18 @@ Plug 'itchyny/lightline.vim'
 call plug#end()            
 " Put your non-Plugin stuff after this line
 
+" Ale Config 
 let g:ale_sign_column_always = 1
 let g:ale_sign_error = '!!'
 let g:ale_sign_warning = '--'
-let g:prettier#config#single_quote = 'false'
+
+" Vim-Prettier Config
+" let g:prettier#config#single_quote = 'false'
+
+" Lightline Config
+let g:lightline = {
+    \ 'colorscheme' : 'wombat',
+    \ }
 
 "format files for windows
 "set fileformat=dos

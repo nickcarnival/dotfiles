@@ -114,6 +114,7 @@ export LC_CTYPE=en_US.UTF-8
 alias r="ranger"
 alias vim="nvim"
 alias v="nvim"
+alias svim="sudo vim"
 alias p="python"
 #alias ls="lsd"
 alias xinitrc="nvim ~/.xinitrc"
@@ -134,6 +135,7 @@ function cs () {
 function copy() {
     xclip -sel c $1
 }
+
 function clean() {
     echo '[*] Removing Pacman Cache'
     sudo paccache --remove --keep 1
@@ -163,26 +165,33 @@ function gitssh () {
 
 # SSH Aliases
 alias isengard="ssh ncarnival@isengard.mines.edu "
-
 alias illuminate="ssh ncarnival@illuminate.mines.edu "
-
 alias imagine="ssh ncarnival@imagine.mines.edu "
+alias lilpi="ssh lilpi@192.168.223.145"
+
 alias minesvpn="sudo openvpn --config client.ovpn"
 
 
 # Application Config Aliases
+alias dotfiles="cd ~/dotfiles"
 alias i3config="vim ~/dotfiles/.config/i3/config"
 alias zshrc="vim ~/dotfiles/.zshrc && zsh"
-alias vimrc="vim ~/dotfiles/.vim/vimrc"
 alias polybarrc="vim ~/dotfiles/.config/polybar/config"
 alias alacrittyrc="vim ~/dotfiles/.config/alacritty/alacritty.yml"
 alias tmuxrc="vim ~/dotfiles/.tmux.conf"
 
 function vimrc () {
     nvim ~/.vim/vimrc
+    # Set the vim syslinks
     nvim +PlugInstall +qall
 }
 
+# Executes python script to cahnge background based off of popular r/wallpaper
+function change_background() {
+
+}
+
+# TODO: Make this work
 # Mounts filesystem
 function usb () {
     echo 'Choose a device'
