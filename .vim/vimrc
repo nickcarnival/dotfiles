@@ -1,6 +1,4 @@
-"
-"we have to run the PlugInstall and qall now :(
-"vim +PlugInstall +qall
+" How to install plugins: vim +PlugInstall +qall
 
 set encoding=utf-8
 set nocompatible
@@ -11,13 +9,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
-Plug 'derekwyatt/vim-scala'
-"Prettier
-"Plug 'prettier/vim-prettier'
-"Plug 'racer-rust/vim-racer'
-Plug 'rust-lang/rust.vim'
 Plug 'itchyny/lightline.vim'
-
+Plug 'tpope/vim-fugitive'
 
 call plug#end()            
 " Put your non-Plugin stuff after this line
@@ -32,11 +25,23 @@ let g:ale_sign_warning = '--'
 
 " Lightline Config
 let g:lightline = {
-    \ 'colorscheme' : 'wombat',
+    \ 'colorscheme': 'wombat',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified'] ],
+    \   'right': [ [ 'absolutepath', 'spell' ] ]
+    \ },
+    \ 'component_function': {
+    \   'gitbranch': 'FugitiveHead'
+    \ },
+    \ 'component': {
+    \   'helloworld': 'Hello, world!'
+    \ },
     \ }
 
 "format files for windows
 "set fileformat=dos
+
 " neovim remap
 tnoremap <Esc> <C-\><C-n>
 
