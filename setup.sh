@@ -8,6 +8,7 @@ echo -e "  \u001b[34;1m (1) Install oh-my-zsh \u001b[0m"
 echo -e "  \u001b[34;1m (2) Install zsh plugins \u001b[0m"
 echo -e "  \u001b[34;1m (3) Install vim plugins \u001b[0m"
 echo -e "  \u001b[34;1m (4) Setup symlinks \u001b[0m"
+echo -e "  \u001b[34;1m (5) Setup vim symlinks \u001b[0m"
 echo -e "  \u001b[31;1m (0) Exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -66,7 +67,6 @@ case $option in
 
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
-    # TODO: link a directory and all of its contentes
     ln -sfnv "$PWD/.vim" ~/.vim
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
     ln -sfnv "$PWD/.bashrc" ~/.bashrc
@@ -74,7 +74,11 @@ case $option in
 
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
     ;;
-
+"5")echo -e "\u001b[7m Setting Up vim symlinks... \u001b[0m"
+    mv -iv ~/.vim/ ~/.vim.old
+    ln -sfnv "$PWD/.config/nvim" ~/.config/nvim
+    ln -sfnv "$PWD/.vim" ~/.vim
+    ;;
 "0")echo -e "\u001b[32;1m Bye! \u001b[0m"
     exit 0
     ;;
