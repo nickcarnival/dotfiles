@@ -123,6 +123,7 @@ alias m="man"
 alias temp="watch sensors -f"
 alias tp="ping -c 1 1.1.1.1"
 alias sl='ls'
+alias trash='rm ./trash*'
 
 function wifi () {
     sudo wifi-menu
@@ -193,16 +194,16 @@ function change_background() {
 
 # TODO: Make this work
 # Mounts filesystem
-function usb () {
-    echo 'Choose a device'
-    lsblk
-    read dir
-    echo 'Deleting USB dir'
-    rm -rf  USB
-    mkdir USB 
-    echo "Mounting $dir to USB"
-    sudo mount $dir USB
-}
+# function usb () {
+#     echo 'Choose a device'
+#     sudo lsblk
+#     read dir
+#     echo 'Deleting USB dir'
+#     rm -rf  USB
+#     mkdir USB 
+#     echo "Mounting $dir to USB"
+#     sudo mount $dir USB
+# }
 
 # Unmounts and ejects filesystem
 # Does not safely work yet...
