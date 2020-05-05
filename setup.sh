@@ -8,6 +8,7 @@ echo -e "  \u001b[34;1m (1) Install oh-my-zsh \u001b[0m"
 echo -e "  \u001b[34;1m (2) Install zsh plugins \u001b[0m"
 echo -e "  \u001b[34;1m (3) Install vim plugins \u001b[0m"
 echo -e "  \u001b[34;1m (4) Setup symlinks \u001b[0m"
+echo -e "  \u001b[34;1m (5) Setup vim symlinks \u001b[0m"
 echo -e "  \u001b[31;1m (0) Exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -37,7 +38,36 @@ case $option in
 
     echo 'Copying Local Vim config to home directory'
     cp -r "$PWD/.vim" ~/.vim 
-    nvim +PlugInstall +qall
+
+    # Handle command not found
+    if [ -x "$(command -v nvim)" ]
+    then
+        # Is installed
+        nvim +PlugInstall +qall
+    else
+        # Is not installed
+
+        echo -e "\u001b[33mNeovim \u001b[0mis not installed, would you like to install it? \u001b[33m(y/n) \u001b[0m"
+        echo -en "\u001b[32;1m ==> \u001b[0m"
+        read -r install_nvim
+
+        if [ $install_nvim = "y" ]
+        then
+            YUM_CMD=$(which yum) 
+            APT_GET_CMD=$(which apt-get) 
+            PACMAN_CMD=$(which pacman) 
+            if [[  ! -z $YUM_CMD ]]; then
+                yum install -y https:dl.fedoraproject.org/pub/epel/epel-release-latest-7-noarch.rpm
+                yum install -y neovim python3-neovim
+            elif [[ ! -z $APT_GET_CMD ]]; then
+                sudo apt-get install neovim -y
+            elif [[ ! -z $PACMAN_CMD ]]; then
+                sudo pacman -S --noconfirm nvim
+            fi
+        else
+            echo -e "\u001b[33m Vim plugins will not be installed. \u001b[m"
+        fi
+    fi
     ;;
 
 "4")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
@@ -66,7 +96,6 @@ case $option in
 
     ln -sfnv "$PWD/.gitconfig" ~/.gitconfig
     ln -sfnv "$PWD/.tmux.conf" ~/.tmux.conf
-    # TODO: link a directory and all of its contentes
     ln -sfnv "$PWD/.vim" ~/.vim
     ln -sfnv "$PWD/.zshrc" ~/.zshrc
     ln -sfnv "$PWD/.bashrc" ~/.bashrc
@@ -74,7 +103,11 @@ case $option in
 
     echo -e "\u001b[36;1m Remove backups with 'rm -ir ~/.*.old && rm -ir ~/.config/*.old'. \u001b[0m"
     ;;
-
+"5")echo -e "\u001b[7m Setting Up vim symlinks... \u001b[0m"
+    mv -iv ~/.vim/ ~/.vim.old
+    ln -sfnv "$PWD/.config/nvim" ~/.config/nvim
+    ln -sfnv "$PWD/.vim" ~/.vim
+    ;;
 "0")echo -e "\u001b[32;1m Bye! \u001b[0m"
     exit 0
     ;;
