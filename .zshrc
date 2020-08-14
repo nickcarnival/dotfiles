@@ -151,6 +151,8 @@ function update () {
     upgrade_oh_my_zsh
     echo '[*] Updating Yay repositories'
     sudo yay -Syu
+    echo '[*] Updating pip'
+    pip install --upgrade pip
 }
 
 function install() {
@@ -168,7 +170,6 @@ function gitssh () {
 alias isengard="ssh ncarnival@isengard.mines.edu "
 alias illuminate="ssh ncarnival@illuminate.mines.edu "
 alias imagine="ssh ncarnival@imagine.mines.edu "
-alias lilpi="ssh lilpi@192.168.223.145"
 
 alias minesvpn="sudo openvpn --config client.ovpn"
 
@@ -186,39 +187,3 @@ function vimrc () {
     # Set the vim syslinks
     nvim +PlugInstall +qall
 }
-
-# Executes python script to cahnge background based off of popular r/wallpaper
-function change_background() {
-
-}
-
-# TODO: Make this work
-# Mounts filesystem
-# function usb () {
-#     echo 'Choose a device'
-#     sudo lsblk
-#     read dir
-#     echo 'Deleting USB dir'
-#     rm -rf  USB
-#     mkdir USB 
-#     echo "Mounting $dir to USB"
-#     sudo mount $dir USB
-# }
-
-# Unmounts and ejects filesystem
-# Does not safely work yet...
-# function ejectusb () {
-#     echo 'Choose a device'
-#     lsblk
-#     read dir
-#     echo "Unmounting $dir"
-#     sudo umount $dir
-#     sudo eject $dir
-#     if [[ -f USB ]]; then
-#         echo "Deleting USB"
-#         rm -rf USB
-#     fi
-#     echo "USB does not exist in the current directory"
-# }
-
-
