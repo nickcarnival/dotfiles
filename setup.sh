@@ -38,7 +38,36 @@ case $option in
 
     echo 'Copying Local Vim config to home directory'
     cp -r "$PWD/.vim" ~/.vim 
-    nvim +PlugInstall +qall
+
+    # Handle command not found
+    if [ -x "$(command -v nvim)" ]
+    then
+        # Is installed
+        nvim +PlugInstall +qall
+    else
+        # Is not installed
+
+        echo -e "\u001b[33mNeovim \u001b[0mis not installed, would you like to install it? \u001b[33m(y/n) \u001b[0m"
+        echo -en "\u001b[32;1m ==> \u001b[0m"
+        read -r install_nvim
+
+        if [ $install_nvim = "y" ]
+        then
+            YUM_CMD=$(which yum) 
+            APT_GET_CMD=$(which apt-get) 
+            PACMAN_CMD=$(which pacman) 
+            if [[  ! -z $YUM_CMD ]]; then
+                yum install -y https:dl.fedoraproject.org/pub/epel/epel-release-latest-7-noarch.rpm
+                yum install -y neovim python3-neovim
+            elif [[ ! -z $APT_GET_CMD ]]; then
+                sudo apt-get install neovim -y
+            elif [[ ! -z $PACMAN_CMD ]]; then
+                sudo pacman -S --noconfirm nvim
+            fi
+        else
+            echo -e "\u001b[33m Vim plugins will not be installed. \u001b[m"
+        fi
+    fi
     ;;
 
 "4")echo -e "\u001b[7m Setting up symlinks... \u001b[0m"
