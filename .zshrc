@@ -125,9 +125,15 @@ alias tp="ping -c 1 1.1.1.1"
 alias sl='ls'
 alias trash='rm ./trash*'
 
+function mkcd () {
+    mkdir $1
+    cd $1
+}
+
 function wifi () {
     sudo wifi-menu
 }
+
 function cs () {
     cd $1
     ls
