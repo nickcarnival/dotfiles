@@ -8,8 +8,9 @@
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
-#mod 4 is the 'Windows Key'
-set $mod Mod4
+#mod 4 is the 'Super Key'
+#mod 1
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -33,7 +34,7 @@ font pango:monospace 6, Awesome 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec rxvt-unicode
 
 #switch monitor
 #bindsym $mod+Shift+s exec --no-startup-id ~/Desktop/switchMonitor
@@ -146,8 +147,8 @@ bindsym $mod+a focus parent
 #----This section contains graphic changes----
 new_window pixel 1
 #i3-gaps settings
-gaps inner 2 
-gaps outer 2
+# gaps inner 2 
+# gaps outer 2
 
 #----End----
 

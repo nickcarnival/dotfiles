@@ -124,6 +124,7 @@ alias temp="watch sensors -f"
 alias tp="ping -c 1 1.1.1.1"
 alias sl='ls'
 alias trash='rm ./trash*'
+alias urxvt='rxvt-unicode'
 
 function mkcd () {
     mkdir $1
