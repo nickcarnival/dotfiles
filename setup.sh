@@ -3,12 +3,13 @@
 #Setup script for Dotfiles
 echo -e "\u001b[32;1m Setting up Dotfiles...\u001b[0m"
 
-echo -e " \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
+echo -e "  \u001b[37;1m\u001b[4mSelect an option:\u001b[0m"
 echo -e "  \u001b[34;1m (1) Install oh-my-zsh \u001b[0m"
 echo -e "  \u001b[34;1m (2) Install zsh plugins \u001b[0m"
 echo -e "  \u001b[34;1m (3) Install vim plugins \u001b[0m"
 echo -e "  \u001b[34;1m (4) Setup symlinks \u001b[0m"
 echo -e "  \u001b[34;1m (5) Setup vim symlinks \u001b[0m"
+echo -e "  \u001b[34;1m (6) Setup ranger symlinks \u001b[0m"
 echo -e "  \u001b[31;1m (0) Exit \u001b[0m"
 
 echo -en "\u001b[32;1m ==> \u001b[0m"
@@ -108,6 +109,13 @@ case $option in
     ln -sfnv "$PWD/.config/nvim" ~/.config/nvim
     ln -sfnv "$PWD/.vim" ~/.vim
     ;;
+
+"6")echo -e "\u001b[7m Installing ranger...\u001b[0m"
+    mv -iv ~/.ranger/ ~/.ranger.old
+    ln -sfnv "$PWD/.config/ranger" ~/.config/ranger
+    ;;
+
+
 "0")echo -e "\u001b[32;1m Bye! \u001b[0m"
     exit 0
     ;;
